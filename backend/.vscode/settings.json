@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.js": "java",
+        "plyconfig.json": "jsonc"
+    }
+}

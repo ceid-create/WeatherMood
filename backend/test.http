@@ -1,0 +1,22 @@
+# Health check
+GET http://localhost:3000/
+
+###
+
+# Add a test place
+POST http://localhost:3000/favorites
+Content-Type: application/json
+
+{
+  "name": "Central Park",
+  "category": "park",
+  "lat": 40.78,
+  "lng": -73.96,
+  "weatherCondition": "Clear",
+  "rating": 4.8
+}
+
+###
+
+# Get places by weather
+GET http://localhost:3000/places?weather=Clear
