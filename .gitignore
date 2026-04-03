@@ -16,6 +16,10 @@ local.properties
 .DS_Store
 Thumbs.db
 
+# IDE / tool configs
+.vscode/
+.claude/
+
 # Generated files
 captures/
 .externalNativeBuild/
