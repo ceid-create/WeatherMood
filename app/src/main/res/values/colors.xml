@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- WeatherMood brand colors -->
+    <color name="blue_700">#1565C0</color>
+    <color name="blue_900">#0A237E</color>
+    <color name="amber_600">#FFD600</color>
+    <color name="error_red">#CF6679</color>
+
+    <!-- Sky / Night palette -->
+    <color name="sky_deep">#0A1628</color>
+    <color name="sky_mid">#0D2550</color>
+    <color name="sky_light">#1A3A6B</color>
+    <color name="sun_gold">#FFD54F</color>
+    <color name="cloud_white">#E8F4FD</color>
+    <color name="card_surface">#1A2744</color>
+    <color name="text_secondary_on_dark">#90CAF9</color>
+</resources>
