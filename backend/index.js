@@ -14,6 +14,15 @@ mongoose
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
+// User Schema (Added for account deletion)
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  email:    { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+});
+
+const User = mongoose.model('User', userSchema);
+
 // Place Schema
 const placeSchema = new mongoose.Schema({
   name:             { type: String, required: true },
@@ -104,6 +113,18 @@ app.post('/verify-reset-code', (req, res) => {
 
   resetCodes.delete(email.toLowerCase());
   res.json({ success: true });
+});
+
+// DELETE /users/:username — removes account from database
+app.delete('/users/:username', async (req, res) => {
+  try {
+    const { username } = req.params;
+    const result = await User.findOneAndDelete({ username });
+    if (!result) return res.status(404).json({ error: 'User not found' });
+    res.json({ success: true, message: 'Account deleted' });
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
+  }
 });
 
 // Health check
